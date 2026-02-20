@@ -1,480 +1,570 @@
 <!DOCTYPE html>
+<html class="dark" lang="en">
 
-<html class="dark" dir="rtl" lang="fa"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>توسعه‌دهنده وب</title>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Noto+Sans+Arabic:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
-<script src="/static/js/3.4.js"></script>
-<script id="tailwind-config">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Backend Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#135bec",
+                        "primary": "#195de6",
                         "background-light": "#f6f6f8",
-                        "background-dark": "#111722",
-                        "surface-dark": "#1e293b",
-                        "border-dark": "#232f48",
+                        "background-dark": "#0b0f1a",
                     },
                     fontFamily: {
-                        "display": ["Noto Sans Arabic", "Inter", "sans-serif"],
-                        "body": ["Noto Sans Arabic", "Inter", "sans-serif"],
+                        "display": ["Inter", "sans-serif"]
                     },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
                 },
             },
         }
     </script>
-<style>
-        body {
-            font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                font-family: 'Inter', sans-serif;
+            }
         }
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
+        .glass-nav {
+            background: rgba(11, 15, 26, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .skill-card:hover {
+            border-color: #195de6;
+            background: rgba(25, 93, 230, 0.05);
+            transform: translateY(-4px);
+        }
+        .cert-card {
+            transition: all 0.3s ease;
+        }
+        .cert-card:hover {
+            box-shadow: 0 0 20px rgba(25, 93, 230, 0.15);
+            border-color: rgba(25, 93, 230, 0.4);
+        }
+        .dark .cert-card:hover {
+            box-shadow: 0 0 25px rgba(25, 93, 230, 0.3);
+            border-color: rgba(25, 93, 230, 0.5);
         }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white transition-colors duration-200">
-<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-<!-- Navigation -->
-<header class="sticky top-0 z-50 w-full border-b border-border-dark/50 bg-background-dark/80 backdrop-blur-md">
-<div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-<div class="flex items-center gap-3">
-<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/20 text-primary">
-<span class="material-symbols-outlined">terminal</span>
-</div>
-<span class="text-lg font-bold tracking-tight"> مرتضی ذوالفقاری</span>
-</div>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors" href="#about">درباره من</a>
-<a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors" href="#skills">مهارت‌ها</a>
-<a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors" href="#projects">پروژه‌ها</a>
-<a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors" href="#contact">تماس با من</a>
-</nav>
-<div class="flex items-center gap-4">
 
-<!-- Mobile Menu Button -->
-<button class="flex md:hidden h-9 w-9 items-center justify-center rounded-lg border border-border-dark text-white">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</div>
-</header>
-<main class="flex-1">
-<!-- Hero Section -->
-<section class="relative overflow-hidden py-16 sm:py-24 lg:py-32" id="about">
-<div class="absolute inset-0 z-0">
-<!-- Gradient Background -->
-<div class="absolute top-[-10%] right-[-5%] h-[500px] w-[500px] rounded-full bg-primary/10 blur-[100px]"></div>
-<div class="absolute bottom-[-10%] left-[-5%] h-[500px] w-[500px] rounded-full bg-purple-600/10 blur-[100px]"></div>
-</div>
-<div class="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-<div class="flex flex-col-reverse gap-12 lg:flex-row lg:items-center lg:gap-20">
-<!-- Text Content -->
-<div class="flex flex-1 flex-col gap-6 text-center lg:text-right">
-<div class="inline-flex items-center justify-center gap-2 self-center rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 lg:self-start">
-<span class="relative flex h-2 w-2">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-<span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-</span>
-<span class="text-xs font-semibold text-primary">آماده همکاری در پروژه‌های جدید</span>
-</div>
-<h1 class="text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-                                توسعه‌دهنده <span class="text-primary">بک‌اند</span>
-<br class="hidden lg:block"/>
-                                متخصص جنگو و پایتون
-                            </h1>
-<p class="text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-کارشناسی مهندسی کامپیوتر با تجربه‌ای قوی در توسعه بک اند، توانایی من در طراحی و پیاده‌سازی سیستم‌های کارآمد و مقیاس‌پذیر است. با تسلط بر زبان‌ برنامه‌نویسی پایتون و فریم‌ورک‌ جنگو، توانایی حل مسائل پیچیده را دارم. مهارت‌های من شامل کار با دیتابیس‌ها، APIهای RESTful و بهینه‌سازی عملکرد سیستم‌هاست                            </p>
-<div class="flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-<a class="flex h-12 items-center justify-center rounded-lg bg-primary px-8 text-base font-bold text-white transition-all hover:bg-blue-600 hover:shadow-lg hover:shadow-primary/25" href="#projects">
-                                    مشاهده نمونه کارها
-                                </a>
-<a class="flex h-12 items-center justify-center rounded-lg border border-border-dark bg-surface-dark px-8 text-base font-bold text-white transition-all hover:border-slate-500 hover:bg-slate-800" href="#contact">
-                                    تماس با من
-                                </a>
-</div>
-<div class="mt-4 flex items-center justify-center gap-6 text-slate-500 lg:justify-start">
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 selection:bg-primary selection:text-white">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <header
+            class="fixed top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 glass-nav px-6 lg:px-20 py-4">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="bg-primary p-1.5 rounded-lg">
+                        <span class="material-symbols-outlined text-white text-2xl">terminal</span>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight">DevPortfolio</span>
+                </div>
+                <nav class="hidden md:flex items-center gap-10">
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#skills">Skills</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors"
+                        href="#experience">Experience</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#education">Education</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors"
+                        href="#certifications">Certifications</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#contact">Contact</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full border-2 border-primary/30 p-0.5">
+                        <div class="w-full h-full rounded-full bg-cover bg-center bg-slate-800"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-KEqVCRKsWjZkNpVNrCrfsmo0a2qjuY_JPoPqYMofzy_vMva64gnVMZCYDs4x3FrpbrWJvvsMIhceKCobQrYmp3wiLup01SQPc2p4h6syWd7N7ev0N-jgfoW5ll_Ehw8PRk9VVmb6Jp83SZ9UlD5qcAi0zb3o6Ffo1H7rol_XAWIr5Ut3hKrAQ8hSDLclhFsK-fv1tDAt5vc67azbIHk37Q3LIpm9th8LNfJpSrsROavvijSuZLztp5QxMRFXIxUclM0fxSY')">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="flex-1 pt-24">
+  <section class="w-full">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 py-12 sm:py-16 lg:py-24">
 
-</div>
-</div>
-<!-- Hero Image -->
-<div class="flex flex-1 justify-center lg:justify-end">
-<div class="relative w-full max-w-[500px] aspect-square lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 group">
-<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-60 z-10"></div>
-<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('static/images/Screenshot_20250509_161003_Gallery.jpg');">
-</div>
-<!-- Floating Badge -->
-<div class="absolute bottom-6 right-6 z-20 rounded-xl bg-background-dark/90 p-4 backdrop-blur border border-white/10 shadow-lg max-w-[200px]">
-<div class="flex items-center gap-3 mb-2">
-<div class="flex items-center justify-center h-8 w-8 rounded-full bg-primary/20 text-primary">
-<span class="material-symbols-outlined text-sm">verified</span>
-</div>
-</div>
-<p class="text-xs text-slate-400">توسعه تخصصی سیستم‌های بک‌اند پیچیده</p>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- LEFT SIDE -->
+      <div class="space-y-8 text-center lg:text-left">
+
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider mx-auto lg:mx-0">
+          <span class="relative flex h-4 w-4">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-4 w-4 bg-primary"></span>
+          </span>
+          Morteza Zulfiqare
+        </div>
+
+        <h1
+          class="text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-black leading-tight tracking-tight">
+          Backend Developer |
+          <span class="text-primary block sm:inline">
+            Python &amp; Django
+          </span>
+        </h1>
+
+        <p
+          class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+          Backend Developer specialized in Django and Python, building scalable and production-ready systems with a
+          strong focus on clean architecture, data integrity, and performance.
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full">
+          <button
+            class="bg-primary text-white h-12 px-8 rounded-lg font-bold hover:shadow-lg hover:shadow-primary/20 transition-all w-full sm:w-auto">
+            View Projects
+          </button>
+          <button
+            class="bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white h-12 px-8 rounded-lg font-bold hover:bg-slate-300 dark:hover:bg-slate-700 transition-all w-full sm:w-auto">
+            Get in Touch
+          </button>
+        </div>
+
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="relative w-full">
+
+        <div
+          class="absolute -inset-6 bg-primary/20 rounded-full blur-3xl opacity-30 hidden lg:block">
+        </div>
+
+        <div
+          class="relative bg-slate-900 rounded-xl border border-slate-800 shadow-2xl overflow-hidden w-full">
+
+          <!-- Header -->
+          <div
+            class="flex items-center gap-1.5 px-4 py-3 bg-slate-800/50 border-b border-slate-800">
+            <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+            <div class="w-3 h-3 rounded-full bg-amber-500/50"></div>
+            <div class="w-3 h-3 rounded-full bg-emerald-500/50"></div>
+            <div class="ml-4 text-xs font-mono text-slate-500 truncate">
+             resume.py
+            </div>
+          </div>
+
+          <!-- Code Body -->
+          <div
+            class="p-4 sm:p-6 font-mono text-[11px] sm:text-sm leading-relaxed overflow-x-auto">
+
+            <div class="space-y-1 min-w-max">
+
+              <div class="flex gap-4">
+                <span class="text-slate-600 select-none w-6">01</span>
+                <span class="text-primary">import</span>
+                <span class="text-slate-100">django</span>
+              </div>
+
+              <div class="flex gap-4">
+                <span class="text-slate-600 select-none w-6">02</span>
+                <span class="text-primary">from</span>
+                <span class="text-slate-100">django.db</span>
+                <span class="text-primary">import</span>
+                <span class="text-slate-100">models</span>
+              </div>
+
+              <div class="flex gap-4">
+                <span class="text-slate-600 select-none w-6">03</span>
+              </div>
+
+              <div class="flex gap-4">
+                <span class="text-slate-600 select-none w-6">04</span>
+                <span class="text-emerald-400">class</span>
+                <span class="text-amber-300">BackendArchitect</span>:
+              </div>
+
+              <div class="flex gap-4">
+                <span class="text-slate-600 select-none w-6">05</span>
+                <span class="pl-4 text-slate-100">def __init__(self):</span>
+              </div>
+
+              <div class="flex gap-4">
+                <span class="text-slate-600 select-none w-6">06</span>
+                <span class="pl-8 text-slate-100">self.tech_stack = [</span>
+                <span class="text-amber-200">"Python"</span>,
+                <span class="text-amber-200">"Django"</span>
+                <span class="text-slate-100">]</span>
+                
+              </div>
+
+              <div class="flex gap-4">
+                <span class="text-slate-600 select-none w-6">07</span>
+                <span class="pl-8 text-slate-100">self.scalable = True</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 </section>
-<!-- Skills Section -->
-<section class="border-t border-border-dark bg-[#0d121c] py-20" id="skills">
-<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-<div class="mb-10 flex flex-col gap-4">
-<h2 class="text-2xl font-bold text-white sm:text-3xl">مهارت‌های فنی</h2>
-<div class="h-1 w-20 rounded-full bg-primary"></div>
-</div>
-<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-<!-- Backend Skills -->
-<div class="rounded-xl border border-border-dark bg-surface-dark p-6 transition-all hover:border-primary/50">
-<div class="mb-4 flex items-center gap-3">
-<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500/10 text-blue-500">
-<span class="material-symbols-outlined">dns</span>
-</div>
-<h3 class="font-bold text-lg text-white">Back-end</h3>
-</div>
-<div class="flex flex-wrap gap-2">
-<span class="inline-flex items-center rounded-md bg-slate-800 px-3 py-1 text-sm font-medium text-slate-300 ring-1 ring-inset ring-slate-700/50">Python</span>
-<span class="inline-flex items-center rounded-md bg-slate-800 px-3 py-1 text-sm font-medium text-slate-300 ring-1 ring-inset ring-slate-700/50">Django</span>
-<span class="inline-flex items-center rounded-md bg-slate-800 px-3 py-1 text-sm font-medium text-slate-300 ring-1 ring-inset ring-slate-700/50">REST Framework</span>
-<span class="inline-flex items-center rounded-md bg-slate-800 px-3 py-1 text-sm font-medium text-slate-300 ring-1 ring-inset ring-slate-700/50">PostgreSQL</span>
-<span class="inline-flex items-center rounded-md bg-slate-800 px-3 py-1 text-sm font-medium text-slate-300 ring-1 ring-inset ring-slate-700/50">Redis</span>
-<span class="inline-flex items-center rounded-md bg-slate-800 px-3 py-1 text-sm font-medium text-slate-300 ring-1 ring-inset ring-slate-700/50">MySql</span>
-<span class="inline-flex items-center rounded-md bg-slate-800 px-3 py-1 text-sm font-medium text-slate-300 ring-1 ring-inset ring-slate-700/50">Celery</span>
-</div>
-</div>
-<!-- Frontend Skills -->
-<div class="rounded-xl border border-border-dark bg-surface-dark p-6 transition-all hover:border-primary/50">
-<div class="mb-4 flex items-center gap-3">
-<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-yellow-500/10 text-yellow-500">
-<span class="material-symbols-outlined">html</span>
-</div>
-<h3 class="font-bold text-lg text-white">Front-end</h3>
-</div>
-<div class="flex flex-wrap gap-2">
-<span class="inline-flex items-center rounded-md bg-slate-800 px-3 py-1 text-sm font-medium text-slate-300 ring-1 ring-inset ring-slate-700/50">JavaScript</span>
-<span class="inline-flex items-center rounded-md bg-slate-800 px-3 py-1 text-sm font-medium text-slate-300 ring-1 ring-inset ring-slate-700/50">jQuery</span>
-<span class="inline-flex items-center rounded-md bg-slate-800 px-3 py-1 text-sm font-medium text-slate-300 ring-1 ring-inset ring-slate-700/50">HTML5</span>
-</div>
-</div>
-<!-- Tools & DevOps -->
-<div class="rounded-xl border border-border-dark bg-surface-dark p-6 transition-all hover:border-primary/50">
-<div class="mb-4 flex items-center gap-3">
-<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-500/10 text-purple-500">
-<span class="material-symbols-outlined">settings_suggest</span>
-</div>
-<h3 class="font-bold text-lg text-white"> DevOps</h3>
-</div>
-<div class="flex flex-wrap gap-2">
-<span class="inline-flex items-center rounded-md bg-slate-800 px-3 py-1 text-sm font-medium text-slate-300 ring-1 ring-inset ring-slate-700/50">Git</span>
-<span class="inline-flex items-center rounded-md bg-slate-800 px-3 py-1 text-sm font-medium text-slate-300 ring-1 ring-inset ring-slate-700/50">Docker</span>
-<span class="inline-flex items-center rounded-md bg-slate-800 px-3 py-1 text-sm font-medium text-slate-300 ring-1 ring-inset ring-slate-700/50">Nginx</span>
-<span class="inline-flex items-center rounded-md bg-slate-800 px-3 py-1 text-sm font-medium text-slate-300 ring-1 ring-inset ring-slate-700/50">CI/CD</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Projects Section -->
-<section class="py-20" id="projects">
-<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-<div class="flex flex-col gap-4">
-<h2 class="text-2xl font-bold text-white sm:text-3xl">نمونه کارها</h2>
-<div class="h-1 w-20 rounded-full bg-primary"></div>
-<p class="text-slate-400 max-w-xl">این پروژه‌ها نشان می‌دهند چگونه با استفاده از راهکارهای بک‌اند اصولی،
-توانسته‌ام عملکرد سیستم‌ها را بهبود دهم،
-پیچیدگی‌ها را مدیریت کنم
-و زیرساخت‌هایی پایدار برای رشد محصول ایجاد کنم.</p>
-</div>
-<a class="inline-flex items-center gap-2 text-primary font-bold hover:text-blue-400 transition-colors" href="https://github.com/mzulfikari/">
-                            مشاهده گیت‌هاب من
-                            <span class="material-symbols-outlined rtl:rotate-180">arrow_right_alt</span>
-</a>
-</div>
-<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-<!-- Project Card 1 -->
-<article class="group relative flex flex-col overflow-hidden rounded-xl border border-border-dark bg-surface-dark transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10">
-<div class="relative aspect-video w-full overflow-hidden bg-slate-800">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('static/images/Screenshot 2025-09-17 020602.png')">
-</div>
-<div class="absolute inset-0 bg-gradient-to-t from-surface-dark to-transparent opacity-80"></div>
-</div>
-<div class="flex flex-1 flex-col p-6">
-<div class="mb-3 flex gap-2">
-<span class="rounded bg-primary/20 px-2 py-0.5 text-xs font-semibold text-primary">Django</span>
-<span class="rounded bg-slate-700/50 px-2 py-0.5 text-xs font-semibold text-slate-300">JavaScript</span>
-<span class="rounded bg-slate-700/50 px-2 py-0.5 text-xs font-semibold text-slate-300">Html&Css</span>
-</div>
-<h3 class="mb-2 text-xl font-bold text-white group-hover:text-primary transition-colors">سیستم مدیریت فروشگاه</h3>
-<p class="mb-4 line-clamp-3 text-sm text-slate-400">این پروژه امکاناتی همچون مدیریت محصولات، سبد خرید، حساب کاربری، و تجربه خرید ساده و امن را در اختیار کاربران قرار می‌دهد.</p>
-<div class="mt-auto flex gap-4 pt-4 border-t border-border-dark/50">
-<a class="flex items-center gap-2 text-sm font-medium text-white hover:text-primary transition-colors" target="_blank" href="https://github.com/mzulfikari/Liara-Shop-django">
-<span class="material-symbols-outlined text-[18px]">code</span>
-                                        کد منبع
-                                    </a>
-</div>
-</div>
-</article>
-<!-- Project Card 2 -->
-<article class="group relative flex flex-col overflow-hidden rounded-xl border border-border-dark bg-surface-dark transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10">
-<div class="relative aspect-video w-full overflow-hidden bg-slate-800">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"  style="background-image: url('static/images/image.png')">
-</div>
-<div class="absolute inset-0 bg-gradient-to-t from-surface-dark to-transparent opacity-80"></div>
-</div>
-<div class="flex flex-1 flex-col p-6">
-<div class="mb-3 flex gap-2">
-<span class="rounded bg-primary/20 px-2 py-0.5 text-xs font-semibold text-primary">Django REST</span>
-<span class="rounded bg-slate-700/50 px-2 py-0.5 text-xs font-semibold text-slate-300">Django</span>
-<span class="rounded bg-slate-700/50 px-2 py-0.5 text-xs font-semibold text-slate-300">JavaScript</span>
-<span class="rounded bg-slate-700/50 px-2 py-0.5 text-xs font-semibold text-slate-300">Html&Css</span>
-</div>
-<h3 class="mb-2 text-xl font-bold text-white group-hover:text-primary transition-colors">سامانه جامع مدیریت نوبت‌دهی آرایشگاه</h3>
-<p class="mb-4 line-clamp-3 text-sm text-slate-400">پروژه  در حال توسعه... </p>
-<div class="mt-auto flex gap-4 pt-4 border-t border-border-dark/50">
-<a class="flex items-center gap-2 text-sm font-medium text-white hover:text-primary transition-colors" target="_blank" href="https://github.com/mzulfikari/Barber-salon-django">
-<span class="material-symbols-outlined text-[18px]">code</span>
-                                        کد منبع
-                                    </a>
-</div>
-</div>
-</article>
-<!-- Project Card 3 -->
-<article class="group relative flex flex-col overflow-hidden rounded-xl border border-border-dark bg-surface-dark transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10">
-<div class="relative aspect-video w-full overflow-hidden bg-slate-800">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('static/images/Screenshot 2025-12-31 004625.png')">
-</div>
-<div class="absolute inset-0 bg-gradient-to-t from-surface-dark to-transparent opacity-80"></div>
-</div>
-<div class="flex flex-1 flex-col p-6">
-<div class="mb-3 flex gap-2">
-<span class="rounded bg-primary/20 px-2 py-0.5 text-xs font-semibold text-primary">Django</span>
-<span class="rounded bg-slate-700/50 px-2 py-0.5 text-xs font-semibold text-slate-300">JavaScript</span>
-<span class="rounded bg-slate-700/50 px-2 py-0.5 text-xs font-semibold text-slate-300">Html&Css</span>
-</div>
-<h3 class="mb-2 text-xl font-bold text-white group-hover:text-primary transition-colors">طراحی فروشگاه</h3>
-<p class="mb-4 line-clamp-3 text-sm text-slate-400">پروژه فروشگاهی با طراحی پنل مدیریتی مجزا برای ادمین و مشتری اتصال به درگاه پرداخت و پیاده سازی سبد خرید</p>
-<div class="mt-auto flex gap-4 pt-4 border-t border-border-dark/50">
-<a class="flex items-center gap-2 text-sm font-medium text-white hover:text-primary transition-colors"  target="_blank" href="https://github.com/mzulfikari/goemart-shop-django">
-<span class="material-symbols-outlined text-[18px]">code</span>
-                                        کد منبع
-                                    </a>
-<a class="flex items-center gap-2 text-sm font-medium text-white hover:text-primary transition-colors" target="_blank" href="https://github.com/mzulfikari/goemart-shop-django/tree/main/docs">
-<span class="material-symbols-outlined text-[18px]">menu_book</span>
-                                        مستندات
-                                    </a>
-</div>
-</div>
-</article>
-</div>
-</div>
-</section>
-<section class="border-t border-border-dark bg-[#0d121c] py-20" id="certificates">
-<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-<div class="mb-10 flex flex-col gap-4">
-<h2 class="text-2xl font-bold text-white sm:text-3xl">گواهینامه‌ها</h2>
-<div class="h-1 w-20 rounded-full bg-primary"></div>
-</div>
-<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-<div class="group relative flex flex-col overflow-hidden rounded-xl border border-border-dark bg-surface-dark transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
-<div class="relative aspect-[4/3] w-full overflow-hidden bg-slate-800">
-<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="static/images/photo23170205258.jpg"/>
-</div>
-<div class="flex flex-1 flex-col p-4">
-<div class="mb-2 flex items-center justify-between">
-<span class="text-xs font-medium text-slate-400">کدیاد</span>
-</div>
-<h3 class="text-base font-bold text-white">آموزش فریم‌ورک جنگو-پروژه محور از مقدماتی تا پیشرفته</h3>
-</div>
-</div>
-<div class="group relative flex flex-col overflow-hidden rounded-xl border border-border-dark bg-surface-dark transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
-<div class="relative aspect-[4/3] w-full overflow-hidden bg-slate-800">
-<img alt="مدرک جنگو" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="static/images/photo23170205356.jpg"/>
-</div>
-<div class="flex flex-1 flex-col p-4">
-<div class="mb-2 flex items-center justify-between">
-<span class="text-xs font-medium text-slate-400"> کدیاد</span>
-</div>
-<h3 class="text-base font-bold text-white">آموزش جامع  DRF</h3>
-</div>
-</div>
-<div class="group relative flex flex-col overflow-hidden rounded-xl border border-border-dark bg-surface-dark transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
-<div class="relative aspect-[4/3] w-full overflow-hidden bg-slate-800">
-<img alt="مدرک جاوا اسکریپت" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="static/images/photo23170205537.jpg"/>
-</div>
-<div class="flex flex-1 flex-col p-4">
-<div class="mb-2 flex items-center justify-between">
-<span class="text-xs font-medium text-slate-400">کدیاد</span>
-</div>
-<h3 class="text-base font-bold text-white">تکنیک های حل مساله و الگوریتم</h3>
-</div>
-</div>
-<div class="group relative flex flex-col overflow-hidden rounded-xl border border-border-dark bg-surface-dark transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
-<div class="relative aspect-[4/3] w-full overflow-hidden bg-slate-800">
-<img alt="مدرک دیتابیس" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="static/images/photo23170205605.jpg"/>
-</div>
-<div class="flex flex-1 flex-col p-4">
-<div class="mb-2 flex items-center justify-between">
-<span class="text-xs font-medium text-slate-400">شرکت مهندسی دایاویرافرتاک</span>
-</div>
-<h3 class="text-base font-bold text-white">بوتکمپ ورود به دنیای تست و نفوذ</h3>
-</div>
-</div>
-<div class="group relative flex flex-col overflow-hidden rounded-xl border border-border-dark bg-surface-dark transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
-<div class="relative aspect-[4/3] w-full overflow-hidden bg-slate-800">
-<img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="static/images/photo19414740791.jpg">
-</div>
-<div class="flex flex-1 flex-col p-4">
-<div class="mb-2 flex items-center justify-between">
-<span class="text-xs font-medium text-slate-400">فرادرس</span>
-</div>
-<h3 class="text-base font-bold text-white">آموزش Python و Django -  طراحی سایت و وب اپلیکیشن</h3>
-</div>
-</div>
-<div class="group relative flex flex-col overflow-hidden rounded-xl border border-border-dark bg-surface-dark transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
-<div class="relative aspect-[4/3] w-full overflow-hidden bg-slate-800">
-<img alt="مدرک جاوا اسکریپت" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="static/images/016a65520814.png"/>
-</div>
-<div class="flex flex-1 flex-col p-4">
-<div class="mb-2 flex items-center justify-between">
-<span class="text-xs font-medium text-slate-400">مکتب خونه</span>
-</div>
-<h3 class="text-base font-bold text-white">آموزش جنگو پیشرفته - مهندس بیگدلی </h3>
-</div>
-</div>
-<div class="group relative flex flex-col overflow-hidden rounded-xl border border-border-dark bg-surface-dark transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
-<div class="relative aspect-[4/3] w-full overflow-hidden bg-slate-800">
-<img alt="مدرک جاوا اسکریپت" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="static/images/016a65520814.png"/>
-</div>
-<div class="flex flex-1 flex-col p-4">
-<div class="mb-2 flex items-center justify-between">
-<span class="text-xs font-medium text-slate-400">مکتب خونه</span>
-</div>
-<h3 class="text-base font-bold text-white"> طراحی فروشگاه با جنگو - مهندس بیگدلی</h3>
-</div>
-</div>
-</div>
-</section>
-<!-- Contact Section -->
- <section class="py-20" id="education">
-<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-<div class="mb-10 flex flex-col gap-4">
-<h2 class="text-2xl font-bold text-white sm:text-3xl">تحصیلات</h2>
-<div class="h-1 w-20 rounded-full bg-primary"></div>
-</div>
-<div class="grid gap-8 md:grid-cols-2">
-<div class="flex flex-col items-center gap-6 rounded-xl border border-border-dark bg-surface-dark p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 md:flex-row">
-<div class="flex h-20 w-20 shrink-0 items-center justify-center rounded-full border border-blue-500/20 bg-blue-900/20 text-blue-400">
-<span class="material-symbols-outlined text-4xl">school</span>
-</div>
-<div class="flex w-full flex-col text-center md:text-right">
-<h3 class="mb-2 text-xl font-bold text-white">مهندسی حرفه‌ای کامپیوتر گرایش نرم‌افزار</h3>
-<p class="mb-1 text-slate-400">دانشگاه آزاد اسلامی</p>
-<div class="flex items-center justify-center gap-2 text-sm font-medium text-primary md:justify-start">
-</div>
-</div>
-</div>
-<div class="flex flex-col items-center gap-6 rounded-xl border border-border-dark bg-surface-dark p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 md:flex-row">
-<div class="flex h-20 w-20 shrink-0 items-center justify-center rounded-full border border-blue-500/20 bg-blue-900/20 text-blue-400">
-<span class="material-symbols-outlined text-4xl">school</span>
-</div>
-<div class="flex w-full flex-col text-center md:text-right">
-<h3 class="mb-2 text-xl font-bold text-white">کاردانی کامپیوتر نرم‌افزار</h3>
-<p class="mb-1 text-slate-400">دانشگاه آزاد اسلامی</p>
-<div class="flex items-center justify-center gap-2 text-sm font-medium text-primary md:justify-start">
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="border-t border-border-dark bg-[#0d121c] py-20" id="contact">
-<div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-<div class="mb-12 text-center">
-<h2 class="text-3xl font-bold text-white mb-4">تماس با من</h2>
-<p class="text-slate-400">پروژه‌ای در ذهن دارید؟ بیایید در موردش صحبت کنیم.</p>
-</div>
-<div class="grid gap-10 md:grid-cols-2">
-<!-- Contact Info -->
-<div class="flex flex-col gap-8">
-<div class="flex items-start gap-4">
-<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-<span class="material-symbols-outlined">mail</span>
-</div>
-<div>
-<h3 class="mb-1 font-bold text-white">ایمیل</h3>
-<p class="text-sm text-slate-400 mb-2">برای پروژه‌ها و پیشنهادات کاری</p>
-<a class="text-primary hover:underline" dir="ltr" href="mailto:mzulfikari1382@gmail.com">mzulfikari1382@gmail.com</a>
-</div>
-<div>
+            <section class="bg-slate-50 dark:bg-slate-900/50 py-24" id="skills">
+                <div class="max-w-7xl mx-auto px-6 lg:px-20">
+                    <div class="mb-16">
+                        <h2 class="text-3xl font-bold mb-4">Technical Proficiency</h2>
+                        <div class="h-1 w-20 bg-primary rounded-full"></div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                        <div
+                            class="skill-card flex flex-col items-center justify-center gap-4 p-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark transition-all duration-300 group">
+                            <img alt="Python Logo" class="w-16 h-16"
+                                src="./static/images/python-logo-dark-2880x1800-16094.png" style="height: 65px; width: 85px;" />
+                            <span class="font-bold text-sm tracking-wide">Python</span>
+                        </div>
+                        <div
+                            class="skill-card flex flex-col items-center justify-center gap-4 p-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark transition-all duration-300 group">
+                            <img alt="Django Logo" class="w-16 h-16 dark:invert"
+                                src="./static/images/django.jpg" />
+                            <span class="font-bold text-sm tracking-wide">Django</span>
+                        </div>
+                        <div
+                            class="skill-card flex flex-col items-center justify-center gap-4 p-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark transition-all duration-300 group">
+                            <img alt="Redis Logo" class="w-16 h-16"
+                                src="./static/images/logo-python.png" />
+                            <span class="font-bold text-sm tracking-wide">Redis</span>
+                        </div>
+                        <div
+                            class="skill-card flex flex-col items-center justify-center gap-4 p-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark transition-all duration-300 group">
+                            <img alt="MySQL Logo" class="w-16 h-16"
+                                src="./static/images/mysql_PNG23.png" />
+                            <span class="font-bold text-sm tracking-wide">MySQL</span>
+                        </div>
+                        <div
+                            class="skill-card flex flex-col items-center justify-center gap-4 p-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark transition-all duration-300 group">
+                            <img alt="Docker Logo" class="w-16 h-16"
+                                src="./static/images/docker.svg" />
+                            <span class="font-bold text-sm tracking-wide">Docker</span>
+                        </div>
+                        <div
+                            class="skill-card flex flex-col items-center justify-center gap-4 p-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark transition-all duration-300 group">
+                            <img alt="AI Frameworks Logo" class="w-16 h-16"
+                                src="./static/images/Celery.jfif" />
+                            <span class="font-bold text-sm tracking-wide">Celery</span>
+                        </div>
+                        <div
+                            class="skill-card flex flex-col items-center justify-center gap-4 p-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark transition-all duration-300 group">
+                            <img alt="AI Frameworks Logo" class="w-16 h-16"
+                                src="./static/images/github.png" />
+                            <span class="font-bold text-sm tracking-wide">GitHub</span>
+                        </div>
+                        <div
+                            class="skill-card flex flex-col items-center justify-center gap-4 p-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark transition-all duration-300 group">
+                            <img alt="AI Frameworks Logo" class="w-16 h-16"
+                                src="./static/images/Ngenx.png" />
+                            <span class="font-bold text-sm tracking-wide">Nginx</span>
+                        </div>
+                        <div
+                            class="skill-card flex flex-col items-center justify-center gap-4 p-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark transition-all duration-300 group">
+                            <img alt="AI Frameworks Logo" class="w-16 h-16"
+                                src="./static/images/CiCD.jpg"  style="height: 65px; width: 85px;" />
+                            <span class="font-bold text-sm tracking-wide">CI/CD</span>
+                        </div>
+                        <div
+                            class="skill-card flex flex-col items-center justify-center gap-4 p-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark transition-all duration-300 group">
+                            <img alt="AI Frameworks Logo" class="w-16 h-16"
+                                src="./static/images/logo-javascript.png" />
+                            <span class="font-bold text-sm tracking-wide">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-24 max-w-7xl mx-auto px-6 lg:px-20" id="experience">
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold mb-4">Professional Experience</h2>
+                    <div class="h-1 w-20 bg-primary rounded-full"></div>
+                </div>
+                <div class="space-y-12">
+                    <div
+                        class="relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-px before:bg-slate-200 dark:before:bg-slate-800">
+                        <div
+                            class="absolute left-[-5px] top-0 w-[11px] h-[11px] rounded-full bg-primary ring-4 ring-primary/20">
+                        </div>
+                        <div class="flex flex-col md:flex-row md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold">Senior Backend Engineer</h3>
+                                <p class="text-primary font-medium">Techflow Systems</p>
+                            </div>
+                            <span
+                                class="text-sm text-slate-500 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full h-fit">Jan
+                                2022 - Present</span>
+                        </div>
+                        <ul
+                            class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-400 text-sm leading-relaxed max-w-3xl">
+                            <li>Architected and implemented high-performance REST APIs using Django and FastAPI serving
+                                over 1M monthly active users.</li>
+                            <li>Optimized database queries and implemented Redis caching, reducing API response times by
+                                40%.</li>
+                            <li>Integrated OpenAI models for automated content moderation and personalized user
+                                experiences.</li>
+                            <li>Led the migration of legacy monolith to containerized microservices using Docker and
+                                Kubernetes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="bg-slate-50 dark:bg-slate-900/50 py-24" id="education">
+                <div class="max-w-7xl mx-auto px-6 lg:px-20">
+                    <div class="grid lg:grid-cols-1 gap-16">
+                        <div class="mb-12">
+                            <div class="mb-10 text-center">
+                                <h2 class="text-3xl font-bold mb-4">Education</h2>
+                                <div class="h-1 w-20 bg-primary rounded-full mx-auto"></div>
+                            </div>
+                            <div
+                                class="p-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark max-w-3xl mx-auto">
+                                <div class="flex items-start gap-4">
+                                    <div class="p-3 bg-primary/10 rounded-lg">
+                                        <span class="material-symbols-outlined text-primary text-3xl">school</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold">B.Sc. in Computer Engineering</h3>
+                                        <p class="text-primary font-semibold text-lg">Islamic Azad University (IAU)</p>
+                                        <p
+                                            class="text-sm text-slate-500 mt-3 leading-relaxed italic border-l-2 border-primary/30 pl-4">
+                                            Specialization in Software Architecture &amp; System Design</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="certifications">
+                            <div class="mb-12 text-center">
+                                <h2 class="text-3xl font-bold mb-4">Certifications &amp; Awards</h2>
+                                <div class="h-1 w-20 bg-primary rounded-full mx-auto"></div>
+                            </div>
+                            <div class="flex flex-col gap-10">
+                                <div
+                                    class="cert-card group flex flex-col md:flex-row bg-white dark:bg-background-dark border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden">
+                                    <div
+                                        class="md:w-1/3 bg-slate-100 dark:bg-slate-900 flex items-center justify-center p-8 border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800">
+                                        <img alt="AWS Certificate"
+                                            class="w-full h-auto object-contain max-h-48 drop-shadow-md"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjcwSKuT8VLVdHPwFlev_Nnvk7XzF03oKoqKNyPrfWjdAhvuy5CX0IMZndi9k9s4_VZqfcjRaN_iZVrtnNFodNBfDXCIMChlqnN3f0EIQiujFqMr7s14fu-jpqGocyNnkwGI5oUQHBRy0zH9Ka5CuTA-C8u5GibevNMu64Tf0gxAJ8236q0zqLTHBpbGrsTY6xEere5KgmMwtkL73AHcMjSIGs--Yy8zvH-Haa_cRlHQCBo44c4gKKJKl7D4Y6-CH4lP2ZaPo" />
+                                    </div>
+                                    <div class="md:w-2/3 p-8 lg:p-12 flex flex-col justify-center">
+                                        <div
+                                            class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+                                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">AWS Solutions
+                                                Architect</h3>
+                                            <span
+                                                class="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-full">August
+                                                2023</span>
+                                        </div>
+                                        <p class="text-lg font-medium text-slate-700 dark:text-slate-300 mb-4">Amazon
+                                            Web Services (AWS)</p>
+                                        <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">Validated
+                                            expertise in designing distributed systems on AWS. Specialized in high
+                                            availability, auto-scaling, and secure multi-tier architectures using EC2,
+                                            RDS, and Lambda.</p>
+                                        <div>
+                                            <button
+                                                class="flex items-center gap-2 text-sm font-bold text-primary hover:text-primary/80 transition-colors bg-primary/5 hover:bg-primary/10 px-5 py-2.5 rounded-lg border border-primary/20">
+                                                <span class="material-symbols-outlined text-xl">verified</span>
+                                                Verify Certificate
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="cert-card group flex flex-col md:flex-row-reverse bg-white dark:bg-background-dark border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden">
+                                    <div
+                                        class="md:w-1/3 bg-slate-100 dark:bg-slate-900 flex items-center justify-center p-8 border-b md:border-b-0 md:border-l border-slate-200 dark:border-slate-800">
+                                        <img alt="Deep Learning Specialization"
+                                            class="w-full h-auto object-contain max-h-48 drop-shadow-md"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzIOOxWFKcxCLvLa7LSnS56r8kOZWqWkr21aKWATyjWrqZd7btMQyd_mhmmRolL8aZiHUrkErFShlu1ynakOyilTpPsEYMqHyvGRnV3rCoNxWGXX9H1aIGhquCK3RhywRKuDbXp12BHpmZk_mxzVimae-Ase-3Qe8IH_2WLxQatX9yNQ55_78VzmycAeo6E3CI7nekHL5aPoSm0JLY5Aq1fZBlx0dX4sN0dmW-o6WZr1PhrJj0wzzZ9-58w4P8eSiGK4iQJ_0" />
+                                    </div>
+                                    <div class="md:w-2/3 p-8 lg:p-12 flex flex-col justify-center">
+                                        <div
+                                            class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+                                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Deep Learning
+                                                Specialization</h3>
+                                            <span
+                                                class="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-full">May
+                                                2023</span>
+                                        </div>
+                                        <p class="text-lg font-medium text-slate-700 dark:text-slate-300 mb-4">Coursera
+                                        </p>
+                                        <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">Comprehensive
+                                            program covering Neural Networks, CNNs, RNNs, and Sequence Models. Applied
+                                            these concepts to build AI-driven backend integrations for predictive
+                                            analytics.</p>
+                                        <div>
+                                            <button
+                                                class="flex items-center gap-2 text-sm font-bold text-primary hover:text-primary/80 transition-colors bg-primary/5 hover:bg-primary/10 px-5 py-2.5 rounded-lg border border-primary/20">
+                                                <span class="material-symbols-outlined text-xl">verified</span>
+                                                Verify Certificate
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="cert-card group flex flex-col md:flex-row bg-white dark:bg-background-dark border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden">
+                                    <div
+                                        class="md:w-1/3 bg-slate-100 dark:bg-slate-900 flex items-center justify-center p-8 border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800">
+                                        <img alt="Advanced Python"
+                                            class="w-full h-auto object-contain max-h-48 drop-shadow-md"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqIWmM48NgTHf_PWvnFk4C4rojx6cgbLI1ISbYcVp6N6Gc0MeZWaEStq4YB4pCrvpRjWY620zOV0ax-D5drkvpBxHZMeUD_6awOJFt08H0rD_zFLFInN5tnVVkuCyfqn1bNEtzn_MHIddVeC0X0ow6AltLmoRiSp321BeS0qBh-g_9rGoSFYNDqGHeHbx_vQGE3SzA039CdFO-z0556eicDTn_sZkiUX6pf1QCPqtZIRa0VZDLcT0HDwDHRj0GuvxjcJVpZEs" />
+                                    </div>
+                                    <div class="md:w-2/3 p-8 lg:p-12 flex flex-col justify-center">
+                                        <div
+                                            class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+                                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Advanced
+                                                Python Programming</h3>
+                                            <span
+                                                class="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-full">December
+                                                2022</span>
+                                        </div>
+                                        <p class="text-lg font-medium text-slate-700 dark:text-slate-300 mb-4">Udemy</p>
+                                        <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">Mastery of
+                                            asynchronous programming, decorators, context managers, and high-performance
+                                            data processing. Focused on writing clean, efficient, and Pythonic backend
+                                            code.</p>
+                                        <div>
+                                            <button
+                                                class="flex items-center gap-2 text-sm font-bold text-primary hover:text-primary/80 transition-colors bg-primary/5 hover:bg-primary/10 px-5 py-2.5 rounded-lg border border-primary/20">
+                                                <span class="material-symbols-outlined text-xl">verified</span>
+                                                Verify Certificate
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="cert-card group flex flex-col md:flex-row-reverse bg-white dark:bg-background-dark border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden">
+                                    <div
+                                        class="md:w-1/3 bg-slate-100 dark:bg-slate-900 flex items-center justify-center p-8 border-b md:border-b-0 md:border-l border-slate-200 dark:border-slate-800">
+                                        <img alt="Hackathon Award"
+                                            class="w-full h-auto object-contain max-h-48 drop-shadow-md"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZNpd9k_VZ7mIAMHsiXKzOdOsBdAl76nApLPxNABzrNSBMHohNXAvfoEVK0Nigiqtu_BM2xBjAZy77Rei6K-BjG5S-45pAwd1URSS6NUMzpBEO7HL6CHISousnUqW4xcX_rvXQu7RsvncJvktSHuJxwH_XTrlcB62DimnzqGpBTsZM_80YYvbnXpmkn2nUBWdZs5pB27Ma_KjHJMPZNCbAT3GTu865P6vhUm6ibY25Y--0SttdA3UEjh2EwsEtrIV4dlGvjwA" />
+                                    </div>
+                                    <div class="md:w-2/3 p-8 lg:p-12 flex flex-col justify-center">
+                                        <div
+                                            class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+                                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">1st Place -
+                                                National AI Hackathon</h3>
+                                            <span
+                                                class="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-full">October
+                                                2022</span>
+                                        </div>
+                                        <p class="text-lg font-medium text-slate-700 dark:text-slate-300 mb-4">
+                                            TechSummit Organization</p>
+                                        <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">Awarded for
+                                            developing a real-time predictive maintenance backend for manufacturing
+                                            plants, utilizing Django and custom ML models for anomaly detection.</p>
+                                        <div>
+                                            <button
+                                                class="flex items-center gap-2 text-sm font-bold text-primary hover:text-primary/80 transition-colors bg-primary/5 hover:bg-primary/10 px-5 py-2.5 rounded-lg border border-primary/20">
+                                                <span class="material-symbols-outlined text-xl">verified</span>
+                                                Verify Certificate
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-24 max-w-7xl mx-auto px-6 lg:px-20" id="contact">
+                <div class="bg-primary rounded-2xl p-10 lg:p-16 relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2">
+                    </div>
+                    <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-10">
+                        <div class="max-w-xl">
+                            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">Ready to scale your next project?
+                            </h2>
+                            <p class="text-white/80 text-lg">
+                                I'm always open to discussing backend architecture, AI integration, or full-scale
+                                software development. Let's build something exceptional together.
+                            </p>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button
+                                class="bg-white text-primary h-14 px-10 rounded-xl font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined">mail</span>
+                                Send Message
+                            </button>
+                            <button
+                                class="bg-white/10 text-white h-14 px-10 rounded-xl font-bold hover:bg-white/20 transition-all border border-white/20 backdrop-blur-sm">
+                                View GitHub
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark py-16">
+            <div class="max-w-7xl mx-auto px-6 lg:px-20">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+                    <div class="flex items-center gap-3 justify-center md:justify-start">
+                        <div class="bg-primary/20 p-2 rounded-lg">
+                            <span class="material-symbols-outlined text-primary text-2xl">terminal</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-lg font-bold tracking-tight">DevPortfolio</span>
+                            <span class="text-xs text-slate-500 font-medium">© 2024 Backend Architect</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-center gap-6">
+                        <a class="group flex flex-col items-center gap-2 text-slate-500 hover:text-primary transition-all"
+                            href="#">
+                            <div
+                                class="w-12 h-12 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center group-hover:border-primary group-hover:bg-primary/5 transition-colors">
+                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.744.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22v3.293c0 .319.192.694.805.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-widest">GitHub</span>
+                        </a>
+                        <a class="group flex flex-col items-center gap-2 text-slate-500 hover:text-primary transition-all"
+                            href="#">
+                            <div
+                                class="w-12 h-12 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center group-hover:border-primary group-hover:bg-primary/5 transition-colors">
+                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-widest">LinkedIn</span>
+                        </a>
+                    </div>
+                    <div class="text-center md:text-right">
+                        <p class="text-sm text-slate-500 italic">Built for performance, scalability, and AI-driven
+                            futures.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 
-</div>
-</div>
-<div class="flex items-start gap-4">
-<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-slate-700/50 text-white">
-<span class="material-symbols-outlined">code</span>
-</div>
-<div>
-<h3 class="mb-1 font-bold text-white">گیت‌هاب</h3>
-<p class="text-sm text-slate-400 mb-2">مشاهده نمونه‌کدها</p>
-<a class="text-primary hover:underline" dir="ltr" target="_blank" href="https://github.com/mzulfikari">github.com/mzulfikari</a>
-</div>
-</div>
-<div class="flex items-start gap-4">
+</body>
 
-</div>
-<div class="mt-auto relative -top-4 rounded-xl bg-surface-dark p-6 border border-border-dark">
+</html>
 
-<p class="text-sm text-slate-300 mb-4">
-                                    "برنامه‌نویسی هنر تبدیل ایده‌ها به واقعیت است.."
-                                </p>
-
-<div>
-
-</div>
-</div>
-</div>
-</div>
-<!-- Contact Form -->
-<form class="flex flex-col gap-4 rounded-xl border border-border-dark bg-surface-dark p-6 shadow-lg">
-<div>
-<label class="mb-2 block text-sm font-medium text-slate-300" for="name">نام و نام خانوادگی</label>
-<input class="w-full rounded-lg border border-border-dark bg-background-dark px-4 py-3 text-white placeholder-slate-600 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" id="name" placeholder="مثلا: علی محمدی" type="text"/>
-</div>
-<div>
-<label class="mb-2 block text-sm font-medium text-slate-300" for="email">ایمیل</label>
-<input class="w-full rounded-lg border border-border-dark bg-background-dark px-4 py-3 text-white placeholder-slate-600 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" id="email" placeholder="name@company.com" type="email"/>
-</div>
-<div>
-<label class="mb-2 block text-sm font-medium text-slate-300" for="message">پیام شما</label>
-<textarea class="w-full rounded-lg border border-border-dark bg-background-dark px-4 py-3 text-white placeholder-slate-600 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" id="message" placeholder="توضیحات پروژه یا پیام خود را بنویسید..." rows="4"></textarea>
-</div>
-<button class="mt-2 flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 font-bold text-white transition-all hover:bg-blue-600 hover:shadow-lg hover:shadow-primary/20" type="button">
-<span>ارسال پیام</span>
-<span class="material-symbols-outlined text-[20px] rtl:rotate-180">send</span>
-</button>
-</form>
-</div>
-</div>
-</section>
-</main>
-<footer class="border-t border-border-dark bg-background-dark py-8 text-center">
-<div class="mx-auto max-w-6xl px-4">
-<div class="mt-4 flex justify-center gap-6">
-</div>
-</div>
-</footer>
-</div>
-</body></html>
