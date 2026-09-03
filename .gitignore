@@ -1,3 +1,4 @@
+@"
 # Dependencies
 node_modules/
 **/node_modules/
@@ -6,10 +7,11 @@ node_modules/
 .next/
 **/.next/
 
-# Production
+# Static export / production output
 out/
-dist/
 build/
+dist/
+build-output/
 
 # Environment
 .env
@@ -26,3 +28,4 @@ yarn-error.log*
 # OS
 .DS_Store
 Thumbs.db
+"@ | Set-Content .gitignore
