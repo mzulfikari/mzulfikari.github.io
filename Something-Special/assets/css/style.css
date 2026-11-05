@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap");
+:root {
+  color-scheme: dark;
+  --bg: #200910;
+  --bg2: #3b101d;
+  --panel: #fff8f5;
+  --panel-2: #fff0ed;
+  --ink: #39151e;
+  --muted: #987780;
+  --rose: #df526f;
+  --rose-dark: #b82f50;
+  --rose-soft: #ffe1e5;
+  --gold: #d6a35d;
+  --line: #f0d8d5;
+  --mono: "DM Mono", monospace;
+  --fa: "Vazirmatn", sans-serif;
+  --display: "Lalezar", var(--fa);
+}
+* { box-sizing: border-box; }
+html { min-height: 100%; }
+body {
+  margin: 0; min-height: 100vh; padding: 28px 16px;
+  display: grid; place-items: center; overflow-x: hidden;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(223,82,111,.22), transparent 34%),
+    radial-gradient(circle at 88% 82%, rgba(214,163,93,.13), transparent 32%),
+    linear-gradient(145deg, var(--bg), var(--bg2));
+  color: var(--ink); font-family: var(--fa);
+}
+button { font: inherit; }
+button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.app-shell { width: min(100%, 510px); position: relative; z-index: 1; }
+.app-card {
+  position: relative; min-height: 650px; padding: 22px 26px 18px;
+  border: 1px solid rgba(255,255,255,.42); border-radius: 28px;
+  background: var(--panel); box-shadow: 0 30px 90px rgba(0,0,0,.34);
+  display: flex; flex-direction: column; overflow: hidden;
+}
+.app-header { display:flex; align-items:center; gap:11px; padding-bottom:19px; border-bottom:1px solid var(--line); }
+.brand-mark {
+  width:38px; height:38px; border-radius:13px; display:grid; place-items:center;
+  color:#fff; font-size:23px; background:linear-gradient(145deg,var(--rose),var(--rose-dark));
+  box-shadow:0 7px 18px rgba(223,82,111,.28);
+}
+.brand-copy { display:flex; flex-direction:column; gap:1px; }
+.brand-name { font:500 10px var(--mono); letter-spacing:1.3px; color:#7c4752; direction:ltr; }
+.brand-version { font:11px var(--mono); color:#b18b91; direction:ltr; }
+.status-indicator { margin-right:auto; direction:ltr; font:10px var(--mono); color:#7c9a77; display:flex; align-items:center; gap:6px; }
+.status-indicator i { width:6px;height:6px;border-radius:50%;background:#7cb47a;box-shadow:0 0 9px #7cb47a; }
+.progress-area { padding:17px 0 6px; }
+.progress-meta { display:flex;justify-content:space-between;direction:ltr;color:#b18b91;font:10px var(--mono);letter-spacing:.7px; }
+.progress-track { height:4px;background:#f4e2df;border-radius:99px;margin-top:9px;overflow:hidden;direction:ltr; }
+.progress-track span { display:block;width:14.285%;height:100%;background:linear-gradient(90deg,var(--rose),var(--gold));border-radius:99px;transition:width .4s ease; }
+.content { flex:1; display:flex; flex-direction:column; padding:24px 0 20px; animation:fade-up .42s ease both; }
+.app-footer { border-top:1px solid var(--line);padding-top:13px;display:flex;justify-content:space-between;gap:8px;color:#b18b91;font:9px var(--mono);direction:ltr; }
+.app-footer b { color:var(--rose); }
+.footer-code { opacity:.8; }
+.ambient { position:fixed;width:280px;height:280px;border-radius:50%;filter:blur(85px);opacity:.18;pointer-events:none; }
+.ambient-one { background:#e34569;top:-130px;right:-80px; }
+.ambient-two { background:#d6a35d;bottom:-150px;left:-80px; }
+.hearts-layer { position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:4; }
+.toast { position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#35101b;color:#fff;padding:10px 16px;border-radius:99px;font-size:12px;box-shadow:0 10px 30px #0003;transition:.25s;z-index:10;white-space:nowrap; }
+.toast.show { opacity:1;transform:translate(-50%,0); }
+@media(max-width:520px) {
+  body { padding:12px;align-items:start; }
+  .app-shell { margin:auto 0; }
+  .app-card { min-height:min(720px, calc(100dvh - 24px));padding:18px 18px 15px;border-radius:23px; }
+  .content { padding:20px 0 17px; }
+  .app-footer { font-size:8px; }
+}
+@media(max-height:720px) and (min-width:521px) { .app-card { min-height:600px; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important; } }
