@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#250b12">
+  <meta name="description" content="A little project, with a lot of feelings.">
+  <title>Something Special.exe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/animations.css">
+  <script type="module" src="./assets/js/app.js"></script>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <main class="app-shell">
+    <section class="app-card" aria-live="polite">
+      <header class="app-header">
+        <div class="brand-mark" aria-hidden="true">✳</div>
+        <div class="brand-copy">
+          <span class="brand-name">SOMETHING SPECIAL</span>
+          <span class="brand-version">a tiny project · v1.0</span>
+        </div>
+        <span class="status-indicator"><i></i> ONLINE</span>
+      </header>
+      <div class="progress-area">
+        <div class="progress-meta"><span id="step-label">INITIALIZING</span><span id="step-count">01 / 07</span></div>
+        <div class="progress-track"><span id="progress-bar"></span></div>
+      </div>
+      <div id="content" class="content"></div>
+      <footer class="app-footer">
+        <span>BUILT WITH <b>♥</b> & A LITTLE COURAGE</span>
+        <span class="footer-code">// no bugs, just feelings</span>
+      </footer>
+    </section>
+    <div id="hearts" class="hearts-layer" aria-hidden="true"></div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </main>
+</body>
+</html>
