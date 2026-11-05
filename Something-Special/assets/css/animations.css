@@ -1,0 +1,8 @@
+@keyframes fade-up { from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)} }
+@keyframes blink { 50%{opacity:0} }
+@keyframes float-heart { 0%{opacity:0;transform:translateY(0) scale(.7) rotate(0)}15%{opacity:.9}100%{opacity:0;transform:translateY(-75vh) scale(1.25) rotate(22deg)} }
+@keyframes pulse-glow { 0%,100%{box-shadow:0 0 0 0 #df526f30}50%{box-shadow:0 0 0 12px #df526f00} }
+@keyframes pop-in { from{opacity:0;transform:scale(.92) translateY(12px)}to{opacity:1;transform:scale(1) translateY(0)} }
+.pop-in { animation:pop-in .5s cubic-bezier(.2,.8,.2,1) both; }
+.heart-particle { position:absolute;bottom:-30px;animation:float-heart 3.6s ease-in forwards;font-size:20px; }
+.hero-icon { animation:pulse-glow 2.5s ease-in-out infinite; }
